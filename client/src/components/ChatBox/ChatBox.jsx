@@ -50,8 +50,6 @@ const ChatBox = ({ chat, currentUser, setSendMessage,  receivedMessage }) => {
     scroll.current?.scrollIntoView({ behavior: "smooth" });
   },[messages])
 
-
-
   // Send Message
   const handleSend = async(e)=> {
     e.preventDefault()

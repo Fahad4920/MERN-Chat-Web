@@ -19,6 +19,8 @@ const Chat = () => {
   const [currentChat, setCurrentChat] = useState(null);
   const [sendMessage, setSendMessage] = useState(null);
   const [receivedMessage, setReceivedMessage] = useState(null);
+ 
+ 
   // Get the chat in chat section
   useEffect(() => {
     const getChats = async () => {
@@ -47,7 +49,6 @@ const Chat = () => {
       socket.current.emit("send-message", sendMessage);}
   }, [sendMessage]);
 
-
   // Get the message from socket server
   useEffect(() => {
     socket.current.on("recieve-message", (data) => {
@@ -57,7 +58,6 @@ const Chat = () => {
 
     );
   }, []);
-
 
   const checkOnlineStatus = (chat) => {
     const chatMember = chat.members.find((member) => member !== user._id);
