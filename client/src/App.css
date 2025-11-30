@@ -19,7 +19,6 @@
   background: #f3f3f3;
   padding: 1rem 1rem;
 }
-
 /* blur */
 .blur {
   position: absolute;
@@ -29,7 +28,6 @@
   background: #a6ddf0;
   filter: blur(72px);
 }
-
 .button {
   display: flex;
   align-items: center;
@@ -57,9 +55,6 @@
 ::-webkit-scrollbar {
   display: none;
 }
-
-
-
 /* Form Styling */
 .infoForm{
   display: flex;
@@ -68,7 +63,6 @@
   align-items: center;
   gap: 2rem;
 }
-
 .infoInput{
   border: none;
   outline: none;
