@@ -11,7 +11,6 @@ export const createChat = async (req, res) => {
     res.status(500).json(error);
   }
 };
-
 export const userChats = async (req, res) => {
   try {
     const chat = await ChatModel.find({
@@ -22,7 +21,6 @@ export const userChats = async (req, res) => {
     res.status(500).json(error);
   }
 };
-
 export const findChat = async (req, res) => {
   try {
     const chat = await ChatModel.findOne({
