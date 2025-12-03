@@ -42,6 +42,7 @@ export const loginUser = async (req, res) => {
     if (user) {
       const validity = await bcrypt.compare(password, user.password);
 
+      
       if (!validity) {
         res.status(400).json("wrong password");
       } else {
@@ -50,12 +51,15 @@ export const loginUser = async (req, res) => {
           process.env.JWTKEY,
           { expiresIn: "1h" }
         );
+
         res.status(200).json({ user, token });
       }
     } else {
       res.status(404).json("User not found");
     }
+
   } catch (err) {
     res.status(500).json(err);
   }
+  
 };
