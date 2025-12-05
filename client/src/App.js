@@ -45,6 +45,7 @@ function App() {
             </main>
           }
         />
+
         <Route
           path="/chat"
           element={user ? <Chat /> : <Navigate to="../auth" />}

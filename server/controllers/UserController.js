@@ -19,6 +19,7 @@ export const getUser = async (req, res) => {
     res.status(500).json(error);
   }
 };
+
 // Get all users
 export const getAllUsers = async (req, res) => {
 

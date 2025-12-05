@@ -14,7 +14,9 @@ export const createPost = async (req, res) => {
     res.status(500).json(error);
   }
 };
+
 // get a post
+
 export const getPost = async (req, res) => {
   const id = req.params.id;
 
