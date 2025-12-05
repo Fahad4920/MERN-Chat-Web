@@ -15,6 +15,8 @@ function saveToLocalStorage(store) {
   }
 }
 
+
+
 function loadFromLocalStorage() {
   try {
       const serializedStore = window.localStorage.getItem('store');
@@ -25,7 +27,10 @@ function loadFromLocalStorage() {
       return undefined;
   }
 }
+
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
 const persistedState = loadFromLocalStorage();
 
 const store = createStore(reducers, persistedState, composeEnhancers(applyMiddleware(thunk)));
