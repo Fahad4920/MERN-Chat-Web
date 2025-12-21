@@ -10,7 +10,6 @@ export const getUser = async (req, res) => {
     const user = await UserModel.findById(id);
     if (user) {
       const { password, ...otherDetails } = user._doc;
-
       res.status(200).json(otherDetails);
     } else {
       res.status(404).json("No such User");
@@ -22,7 +21,6 @@ export const getUser = async (req, res) => {
 
 // Get all users
 export const getAllUsers = async (req, res) => {
-
   try {
     let users = await UserModel.find();
     users = users.map((user)=>{
@@ -36,14 +34,15 @@ export const getAllUsers = async (req, res) => {
 };
 
 // udpate a user
-
 export const updateUser = async (req, res) => {
   const id = req.params.id;
+  
   // console.log("Data Received", req.body)
   const { _id, currentUserAdmin, password } = req.body;
   
   if (id === _id) {
     try {
+     
       // if we also have to update password then password will be bcrypted again
       if (password) {
         const salt = await bcrypt.genSalt(10);
