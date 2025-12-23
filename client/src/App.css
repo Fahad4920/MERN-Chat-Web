@@ -51,10 +51,10 @@
   pointer-events: none;
 }
 
-
 ::-webkit-scrollbar {
   display: none;
 }
+
 /* Form Styling */
 .infoForm{
   display: flex;
@@ -63,6 +63,7 @@
   align-items: center;
   gap: 2rem;
 }
+
 .infoInput{
   border: none;
   outline: none;
