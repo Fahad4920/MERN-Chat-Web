@@ -3,7 +3,6 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
 // Register new user
-
 export const registerUser = async (req, res) => {
 
   const salt = await bcrypt.genSalt(10);
@@ -12,7 +11,6 @@ export const registerUser = async (req, res) => {
   const newUser = new UserModel(req.body);
   const {username} = req.body
   try {
-
     // addition new
     const oldUser = await UserModel.findOne({ username });
 
@@ -33,6 +31,7 @@ export const registerUser = async (req, res) => {
 };
 
 // Login User
+
 export const loginUser = async (req, res) => {
   const { username, password } = req.body;
 
